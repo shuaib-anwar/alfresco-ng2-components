@@ -19,6 +19,7 @@ import { Component } from '@angular/core';
 import { FormRenderingService } from '@alfresco/adf-core';
 import { CloudFormRenderingService } from '@alfresco/adf-process-services-cloud';
 import { SampleWidgetComponent } from './custom-form-components/sample-widget.component';
+import { SignatureWidgetComponent } from './custom-form-components/signature-widget.component';
 
 @Component({
     template: `<router-outlet></router-outlet>`,
@@ -30,7 +31,8 @@ export class ProcessCloudLayoutComponent {
 
     constructor(private formRenderingService: FormRenderingService) {
         this.formRenderingService.register({
-            'custom': () => SampleWidgetComponent
+            'custom': () => SampleWidgetComponent,
+            'signature': () => SignatureWidgetComponent
         });
     }
 }

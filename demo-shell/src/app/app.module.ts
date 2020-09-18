@@ -101,6 +101,9 @@ import localePl from '@angular/common/locales/pl';
 import localeFi from '@angular/common/locales/fi';
 import localeDa from '@angular/common/locales/da';
 import localeSv from '@angular/common/locales/sv';
+import { SignaturePadModule } from 'ngx-signaturepad';
+import { SignatureWidgetComponent } from './components/cloud/custom-form-components/signature-widget.component';
+import { SignatureFieldComponent } from './components/cloud/custom-form-components/signature-field.component';
 
 registerLocaleData(localeFr);
 registerLocaleData(localeDe);
@@ -139,7 +142,8 @@ registerLocaleData(localeSv);
         ThemePickerModule,
         ChartsModule,
         AppCloudSharedModule,
-        MonacoEditorModule.forRoot()
+        MonacoEditorModule.forRoot(),
+        SignaturePadModule
     ],
     declarations: [
         AppComponent,
@@ -189,7 +193,9 @@ registerLocaleData(localeSv);
         FormCloudDemoComponent,
         ConfirmDialogExampleComponent,
         SampleWidgetComponent,
-        ProcessCloudLayoutComponent
+        ProcessCloudLayoutComponent,
+        SignatureWidgetComponent,
+        SignatureFieldComponent
     ],
     providers: [
         {
