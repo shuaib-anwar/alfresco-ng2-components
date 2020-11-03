@@ -33,6 +33,7 @@
         }
 
         .mat-dialog-actions {
+            height: 61px;
             padding: 8px;
             background-color: mat-color($background, background);
             display: flex;
@@ -65,5 +66,9 @@
         mat-icon {
             font-size: 16px;
         }
+    }
+
+    .adf-upload-button-container {
+        // height: 61px;
     }
 }

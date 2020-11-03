@@ -35,6 +35,7 @@ export class ContentNodeSelectorComponent {
     chosenNode: Node[];
     currentDirectoryId: string;
     disableUploadButton = false;
+    hasPermission = false;
 
     constructor(private translation: TranslationService,
                 private notificationService: NotificationService,
@@ -90,5 +91,14 @@ export class ContentNodeSelectorComponent {
 
     onShowingSearch(value: boolean) {
         this.disableUploadButton = value;
+        this.hasPermission = !!this.hasPermission;
+    }
+
+    onPermission(permission: boolean) {
+        this.hasPermission = !permission;
+    }
+
+    isAllowed() {
+        return this.hasPermission || this.disableUploadButton;
     }
 }

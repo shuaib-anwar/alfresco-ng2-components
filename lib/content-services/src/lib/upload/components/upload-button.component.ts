@@ -63,6 +63,10 @@ export class UploadButtonComponent extends UploadBase implements OnInit, OnChang
     @Output()
     permissionEvent: EventEmitter<PermissionModel> = new EventEmitter<PermissionModel>();
 
+    /** Emitted after checking permission on the given rootFolderId. */
+    @Output()
+    hasPermission: EventEmitter<boolean> = new EventEmitter<boolean>();
+
     private hasAllowableOperations: boolean = false;
 
     protected permissionValue: Subject<boolean> = new Subject<boolean>();
@@ -78,6 +82,7 @@ export class UploadButtonComponent extends UploadBase implements OnInit, OnChang
     ngOnInit() {
         this.permissionValue.subscribe((permission: boolean) => {
             this.hasAllowableOperations = permission;
+            this.hasPermission.emit(this.hasAllowableOperations);
         });
     }
 
